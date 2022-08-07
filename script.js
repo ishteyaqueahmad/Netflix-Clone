@@ -68,7 +68,11 @@ window.onload = () => {
   
     // Loop through object
     for(let movie of movies.results){
-      console.log(movie)
+     let imageEl=document.createElement('img')
+     imageEl.setAttribute('data-id',movie.id)
+     imageEl.src=`https://image.tmdb.org/t/p/original${movie[path_type]}`
+
+     movieEl.appendChild(imageEl)
     }
   
       // Within loop create an img element
