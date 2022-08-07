@@ -52,7 +52,7 @@ window.onload = () => {
         throw new Error('something went wrong')
       }
     }).then(data=>{
-      console.log(data)
+      showMovies(data,dom_element,path_type)
     }).catch(error=>{
       console.log(error)
     })
@@ -71,7 +71,6 @@ window.onload = () => {
       console.log(movie)
     }
   
-  
       // Within loop create an img element
   
   
@@ -87,6 +86,9 @@ window.onload = () => {
       // Append the imageElement to the dom_element selected
   
     }
+
+    fetchMovies('https://api.themoviedb.org/3/discover/tv?api_key=19f84e11932abbc79e6d83f82d6d1045&with_networks=213'
+    ,'.original__movies','poster_path')
   
   // ** Function that fetches Netflix Originals **
   function getOriginals() {
